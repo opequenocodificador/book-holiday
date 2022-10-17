@@ -40,8 +40,9 @@ end_date.addEventListener("change", (e) => {
 const bookingCalc = () => {
   var day1 = new Date(start_date.value);
   var day2 = new Date(end_date.value);
-
-  let difference = Math.abs(day2 - day1) / (1000 * 3600 * 24);
+  let diffDays = Math.abs(day2 - day1) / (1000 * 3600 * 24);
+  total.textContent = diffDays * nightPrice.textContent;
+  console.log(total.textContent);
 };
 
 start_date.addEventListener("change", bookingCalc);
